@@ -31,3 +31,13 @@ nmap -p 53,88,135,139,389,445,636,3268,3389 192.168.1.10
 
 # UDP scan (DNS, Kerberos)
 nmap -sU -p 53,88,123 192.168.1.10
+
+# List SMB shares (anonymous)
+smbclient -L //192.168.1.10 -N
+
+# List SMB shares with credentials
+smbclient -L //192.168.1.10 -U user%pass
+
+# Enumerate users & shares with CrackMapExec
+crackmapexec smb 192.168.1.0/24 -u '' -p '' --shares
+crackmapexec smb 192.168.1.0/24 -u user -p pass --users
