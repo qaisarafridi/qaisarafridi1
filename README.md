@@ -18,8 +18,8 @@
 <tr>
 <td width="50%" valign="top">
 
-### 1️⃣ Network Enumeration
-```bash
+1️⃣ Network Enumeration
+bash
 # Find live hosts
 nmap -sn 192.168.1.0/24
 
